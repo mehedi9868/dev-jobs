@@ -5,6 +5,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Banner from "./components/Banner/Banner";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>404</div>,
+    element: <NotFoundPage></NotFoundPage>,
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
