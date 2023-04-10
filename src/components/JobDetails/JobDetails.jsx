@@ -16,8 +16,6 @@ const JobDetails = () => {
     }, [])
 
     const job = jobs.find(single => single._id === dynamic.jobID);
-    console.log(job);
-    const { company_logo, company_name, educational_requirements, experiences, fulltime_or_parttime, job_description, job_responsibility, job_title, location, phone_or_email, remote_or_onsite, salary, _id } = job;
 
     return (
         <>
@@ -27,16 +25,16 @@ const JobDetails = () => {
                     <div className='flex justify-between'>
                         <section className='w-3/4'>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Description:
-                                <span className='text-gray-400 font-medium'> {job_description}</span>
+                                <span className='text-gray-400 font-medium'> {job.job_description}</span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Responsibility:
-                                <span className='text-gray-400 font-medium'> {job_responsibility}</span>
+                                <span className='text-gray-400 font-medium'> {job.job_responsibility}</span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Educational Requirements:
-                                <span className='text-gray-400 font-medium'> {educational_requirements}</span>
+                                <span className='text-gray-400 font-medium'> {job.educational_requirements}</span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Experiences:
-                                <span className='text-gray-400 font-medium'> {experiences}</span>
+                                <span className='text-gray-400 font-medium'> {job.experiences}</span>
                             </h2>
                         </section>
                         <section className=''>
@@ -44,10 +42,10 @@ const JobDetails = () => {
                                 <h2 className='font-bold text-base leading-5 mb-5'>Job Details</h2>
                                 <hr />
                                 <p className='text-gray-600 font-bold text-base leading-5 mt-5'>Salary:
-                                    <span className='text-gray-400 font-medium'> {salary}</span>
+                                    <span className='text-gray-400 font-medium'> {job.salary}</span>
                                 </p>
                                 <p className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Title:
-                                    <span className='text-gray-400 font-medium'> {job_title}</span>
+                                    <span className='text-gray-400 font-medium'> {job.job_title}</span>
                                 </p>
                                 <h2 className='font-bold text-base leading-5 my-5'>Contact Information</h2>
                                 <hr />
