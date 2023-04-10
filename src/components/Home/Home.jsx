@@ -35,8 +35,8 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className='w-3/4 mx-auto text-center my-5 my-24'>
-                <div>
+            <section className='w-3/4 mx-auto text-center my-24'>
+                <div className='mt-24'>
                     <h2 className='font-bold text-4xl'>Featured Jobs</h2>
                     <p className='font-medium leading-5 mt-3 mb-6 text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>

@@ -23,7 +23,7 @@ const AppliedJobs = () => {
     const matchedJobs = jobs.filter(job => appliedID.includes(job._id));
     return (
         <div className='w-3/4 mx-auto'>
-
+            <h2 className='text-xl font-bold text-center my-10'>Applied Jobs</h2>
             <div className='flex justify-end items-center gap-5 my-6'>
                 <h2 className='text-base font-medium'>Sort By:</h2>
                 <button className="bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded">Remote</button>
