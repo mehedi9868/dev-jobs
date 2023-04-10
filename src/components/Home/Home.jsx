@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
@@ -6,6 +6,16 @@ import Featured from '../Featured/Featured';
 
 const Home = () => {
     const categories = useLoaderData();
+
+    const [jobs, setJobs] = useState([]);
+    useEffect(() => {
+        const loadJobs = async () => {
+            const res = await fetch("featuredJobs.json");
+            const data = await res.json();
+            setJobs(data);
+        }
+        loadJobs();
+    }, [])
     return (
         <main className=''>
             <Banner></Banner>
@@ -25,8 +35,19 @@ const Home = () => {
                 </div>
             </section>
 
-            <section>
-                <Featured></Featured>
+            <section className='w-3/4 mx-auto text-center my-5 mt-24'>
+                <div>
+                    <h2 className='font-bold text-4xl'>Featured Jobs</h2>
+                    <p className='font-medium leading-5 mt-3 mb-6 text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
+                </div>
+                <div className='grid grid-cols-2 gap-5'>
+                    {
+                        jobs.map(job => <Featured
+                            key={job._id}
+                            job={job}
+                        ></Featured>)
+                    }
+                </div>
             </section>
         </main>
     );
