@@ -1,25 +1,25 @@
 [
   {
     "id": 1,
-    "icon": "https://example.com/icons/developer.png",
+    "icon": "https://www.svgrepo.com/show/38144/web-development.svg",
     "jobCategory": "Front-end Developer",
     "availableJobs": 1003
   },
   {
     "id": 2,
-    "icon": "https://example.com/icons/designer.png",
+    "icon": "https://www.svgrepo.com/show/88703/api.svg",
     "jobCategory": "Back-end Developer",
     "availableJobs": 508
   },
   {
     "id": 3,
-    "icon": "https://example.com/icons/marketing.png",
+    "icon": "https://www.svgrepo.com/show/201088/web-design.svg",
     "jobCategory": "Web Designer",
     "availableJobs": 806
   },
   {
     "id": 4,
-    "icon": "https://example.com/icons/marketing.png",
+    "icon": "https://www.svgrepo.com/show/135907/web-interface.svg",
     "jobCategory": "User Experience (UX) Designer",
     "availableJobs": 803
   }

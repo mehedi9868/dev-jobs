@@ -1,3 +1,4 @@
+import { list } from 'postcss';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -22,7 +23,7 @@ const JobDetails = () => {
             {job ? (
                 <div className='w-3/4 mt-24 mx-auto'>
                     <h2 className='text-xl font-bold text-center mb-10'>Job Details</h2>
-                    <div className='flex justify-between'>
+                    <div className='flex justify-between gap-5'>
                         <section className='w-3/4'>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Description:
                                 <span className='text-gray-400 font-medium'> {job.job_description}</span>
@@ -31,7 +32,8 @@ const JobDetails = () => {
                                 <span className='text-gray-400 font-medium'> {job.job_responsibility}</span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Educational Requirements:
-                                <span className='text-gray-400 font-medium'> {job.educational_requirements}</span>
+                                <span className='text-gray-400 font-medium'> {job.educational_requirements.map(req => <li>{req}</li>)}
+                                </span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Experiences:
                                 <span className='text-gray-400 font-medium'> {job.experiences}</span>
@@ -50,13 +52,13 @@ const JobDetails = () => {
                                 <h2 className='font-bold text-base leading-5 my-5'>Contact Information</h2>
                                 <hr />
                                 <p className='text-gray-600 font-bold text-base leading-5 mt-5'>Phone:
-                                    <span className='text-gray-400 font-medium'></span>
+                                    <span className='text-gray-400 font-medium'> {job.phone}</span>
                                 </p>
                                 <p className='text-gray-600 font-bold text-base leading-5 mt-5'>Email:
-                                    <span className='text-gray-400 font-medium'></span>
+                                    <span className='text-gray-400 font-medium'> {job.email}</span>
                                 </p>
                                 <p className='text-gray-600 font-bold text-base leading-5 mt-5'>address:
-                                    <span className='text-gray-400 font-medium'></span>
+                                    <span className='text-gray-400 font-medium'> {job.address}</span>
                                 </p>
                             </div>
                             <button className="w-full bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-4 ">Apply Now</button>
