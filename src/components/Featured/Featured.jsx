@@ -1,7 +1,8 @@
 import React from 'react';
 import { CurrencyDollarIcon, MapPinIcon } from '@heroicons/react/24/solid'
+import { Link } from 'react-router-dom';
 const Featured = ({ job }) => {
-    const { company_logo, job_title, company_name, remote_or_onsite, location, salary } = job;
+    const { company_logo, job_title, company_name, remote_or_onsite, location, salary, _id } = job;
     return (
         <div className='w-full h-full text-left border rounded-lg p-8 my-5'>
             <img className='h-8' src={company_logo} alt="" />
@@ -14,7 +15,10 @@ const Featured = ({ job }) => {
                 <CurrencyDollarIcon className="h-6 w-6 text-gray-500" />
                 <p>{salary}</p>
             </div>
-            <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded '>View Details</button>
+            <Link to={`/job/${_id}`}>
+                <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded'>View Details</button>
+            </Link>
+
         </div>
     );
 };

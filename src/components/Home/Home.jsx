@@ -35,7 +35,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className='w-3/4 mx-auto text-center my-5 mt-24'>
+            <section className='w-3/4 mx-auto text-center my-5 my-24'>
                 <div>
                     <h2 className='font-bold text-4xl'>Featured Jobs</h2>
                     <p className='font-medium leading-5 mt-3 mb-6 text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
@@ -48,7 +48,9 @@ const Home = () => {
                         ></Featured>)
                     }
                 </div>
+                <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-10'>See All Jobs</button>
             </section>
+
         </main>
     );
 };
