@@ -8,6 +8,8 @@ const Home = () => {
     const categories = useLoaderData();
 
     const [jobs, setJobs] = useState([]);
+    const [showAllJobs, setShowAllJobs] = useState(false);
+
     useEffect(() => {
         const loadJobs = async () => {
             const res = await fetch("featuredJobs.json");
@@ -16,6 +18,9 @@ const Home = () => {
         }
         loadJobs();
     }, [])
+
+    const featuredJobs = showAllJobs ? jobs : jobs.slice(0, 4);
+
     return (
         <main className=''>
             <Banner></Banner>
@@ -42,13 +47,15 @@ const Home = () => {
                 </div>
                 <div className='grid grid-cols-2 gap-5'>
                     {
-                        jobs.map(job => <Featured
+                        featuredJobs.map(job => <Featured
                             key={job._id}
                             job={job}
                         ></Featured>)
                     }
                 </div>
-                <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-10'>See All Jobs</button>
+                {!showAllJobs && (
+                    <button onClick={() => setShowAllJobs(true)} className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-10'>See All Jobs</button>
+                )}
             </section>
 
         </main>
