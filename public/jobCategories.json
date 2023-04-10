@@ -1,0 +1,29 @@
+{
+    "jobs": [
+      {
+        "id": 1,
+        "icon": "https://example.com/icons/developer.png",
+        "jobCategory": "Front-end Developer",
+        "availableJobs": 1003
+      },
+      {
+        "id": 2,
+        "icon": "https://example.com/icons/designer.png",
+        "jobCategory": "Back-end Developer",
+        "availableJobs": 508
+      },
+      {
+        "id": 3,
+        "icon": "https://example.com/icons/marketing.png",
+        "jobCategory": "Web Designer",
+        "availableJobs": 806
+      },
+      {
+        "id": 3,
+        "icon": "https://example.com/icons/marketing.png",
+        "jobCategory": "User Experience (UX) Designer",
+        "availableJobs": 803
+      }
+    ]
+  }
+  
