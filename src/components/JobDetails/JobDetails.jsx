@@ -26,10 +26,18 @@ const JobDetails = () => {
                     <h2 className='text-xl font-bold text-center mb-10'>Job Details</h2>
                     <div className='flex justify-between'>
                         <section className='w-3/4'>
-                            <h2>Job Description: <span>{job_description}</span></h2>
-                            <h2>Job Responsibility: {job_responsibility}<span></span></h2>
-                            <h2>Educational Requirements: <span>{educational_requirements}</span></h2>
-                            <h2>Experiences: <span>{experiences}</span></h2>
+                            <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Description:
+                                <span className='text-gray-400 font-medium'> {job_description}</span>
+                            </h2>
+                            <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Job Responsibility:
+                                <span className='text-gray-400 font-medium'> {job_responsibility}</span>
+                            </h2>
+                            <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Educational Requirements:
+                                <span className='text-gray-400 font-medium'> {educational_requirements}</span>
+                            </h2>
+                            <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Experiences:
+                                <span className='text-gray-400 font-medium'> {experiences}</span>
+                            </h2>
                         </section>
                         <section className=''>
                             <div className='bg-violet-50 border rounded-lg p-6'>
