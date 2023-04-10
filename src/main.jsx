@@ -4,18 +4,18 @@ import App from "./App";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
-import Banner from "./components/Banner/Banner";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 import Statistics from "./components/Statistics/Statistics";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home></Home>,
+    element: <App></App>,
     children: [
       {
         path: "/",
-        element: <Banner></Banner>,
+        element: <Home></Home>,
+        loader: () => fetch("jobCategories.json")
       },
       {
         path: "statistics",
