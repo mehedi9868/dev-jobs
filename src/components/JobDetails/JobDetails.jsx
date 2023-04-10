@@ -17,6 +17,18 @@ const JobDetails = () => {
     }, [])
 
     const job = jobs.find(single => single._id === dynamic.jobID);
+    const [added, setAdded] = useState({})
+
+    // set to local storage for future use:
+    const handleApply = (id) => {
+        let stored = JSON.parse(localStorage.getItem("jobs")) || [];
+        const existingIds = stored.map(item => item.id);
+        if (!existingIds.includes(id)) {
+            stored.push({ id: id });
+            localStorage.setItem("jobs", JSON.stringify(stored));
+        }
+    }
+
 
     return (
         <>
@@ -61,7 +73,7 @@ const JobDetails = () => {
                                     <span className='text-gray-400 font-medium'> {job.address}</span>
                                 </p>
                             </div>
-                            <button className="w-full bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-4 ">Apply Now</button>
+                            <button onClick={() => handleApply(job._id)} className="w-full bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-4 ">Apply Now</button>
                         </section>
                     </div>
                 </div>
