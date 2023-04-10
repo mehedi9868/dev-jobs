@@ -21,7 +21,7 @@ const Banner = () => {
         </button>
       </section>
       <section className="w-auto">
-        <img src="../../../public/images/target.png" alt="" />
+        <img src="images/target.png" alt="" />
       </section>
     </div>
   );

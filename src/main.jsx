@@ -6,6 +6,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Banner from "./components/Banner/Banner";
 import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import Statistics from "./components/Statistics/Statistics";
 
 const router = createBrowserRouter([
   {
