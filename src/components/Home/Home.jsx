@@ -25,12 +25,12 @@ const Home = () => {
         <main className=''>
             <Banner></Banner>
 
-            <section className='w-3/4 mx-auto text-center my-5 mt-24'>
+            <section className='w-full lg:w-3/4 mx-auto text-center my-5 mt-24'>
                 <div>
                     <h2 className='font-bold text-4xl'>Job Category List</h2>
                     <p className='font-medium leading-5 mt-3 mb-6 text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
-                <div className='grid grid-cols-4 gap-5'>
+                <div className='grid lg:grid-cols-4 lg:gap-5 justify-center'>
                     {
                         categories.map(category => <Category
                             key={category.id}
@@ -40,12 +40,12 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className='w-3/4 mx-auto text-center my-24'>
-                <div className='mt-24'>
+            <section className='w-100 lg:w-3/4 mx-auto text-center my-24'>
+                <div className='mt-24 mx-3'>
                     <h2 className='font-bold text-4xl'>Featured Jobs</h2>
                     <p className='font-medium leading-5 mt-3 mb-6 text-gray'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                 </div>
-                <div className='grid grid-cols-2 gap-5'>
+                <div className='grid lg:grid-cols-2 gap-5 px-3'>
                     {
                         featuredJobs.map(job => <Featured
                             key={job._id}

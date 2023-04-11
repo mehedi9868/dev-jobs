@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AppliedDetails = ({ job }) => {
     const { company_logo, job_title, company_name, remote_or_onsite, fulltime_or_parttime, location, salary, _id } = job;
     return (
-        <div className='flex justify-between items-center border rounded-lg p-6 mb-5'>
+        <div className='flex flex-col lg:flex-row justify-between items-center border rounded-lg p-6 lg:mb-5'>
             <div className='flex items-center gap-6'>
                 <div className='border rounded-lg'>
                     <img className='w-[240px] h-[240px]' src={company_logo} alt="" />
@@ -25,7 +25,7 @@ const AppliedDetails = ({ job }) => {
                 </div>
             </div>
             <Link to={`/job/${_id}`}>
-                <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded'>View Details</button>
+                <button className='bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded mt-3 lg:mt-0'>View Details</button>
             </Link>
         </div>
     );

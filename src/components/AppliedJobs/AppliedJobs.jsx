@@ -31,7 +31,7 @@ const AppliedJobs = () => {
         setShowRemote(false);
     };
     return (
-        <div className='w-3/4 mx-auto'>
+        <div className='w-full px-3 lg:w-3/4 mx-auto'>
             <h2 className='text-xl font-bold text-center my-10'>Applied Jobs</h2>
             <div className='flex justify-end items-center gap-5 my-6'>
                 <h2 className='text-base font-medium'>Filter By:</h2>

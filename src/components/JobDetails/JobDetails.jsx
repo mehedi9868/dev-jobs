@@ -35,7 +35,7 @@ const JobDetails = () => {
     return (
         <>
             {job ? (
-                <div className='w-3/4 mt-24 mx-auto'>
+                <div className='w-full px-3 lg:w-3/4 mt-24 mx-auto'>
                     <h2 className='text-xl font-bold text-center mb-10'>Job Details</h2>
                     <div className='flex justify-between gap-5'>
                         <section className='w-3/4'>
