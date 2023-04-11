@@ -1,6 +1,6 @@
 import { list } from 'postcss';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const JobDetails = () => {
 
@@ -19,6 +19,7 @@ const JobDetails = () => {
     const job = jobs.find(single => single._id === dynamic.jobID);
     const [added, setAdded] = useState({})
 
+    const navigate = useNavigate()
     // set to local storage for future use:
     const handleApply = (id) => {
         let stored = JSON.parse(localStorage.getItem("jobs")) || [];
@@ -27,6 +28,7 @@ const JobDetails = () => {
             stored.push({ id: id });
             localStorage.setItem("jobs", JSON.stringify(stored));
         }
+        navigate("/applied-jobs");
     }
 
 
@@ -44,7 +46,7 @@ const JobDetails = () => {
                                 <span className='text-gray-400 font-medium'> {job.job_responsibility}</span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Educational Requirements:
-                                <span className='text-gray-400 font-medium'> {job.educational_requirements.map(req => <li>{req}</li>)}
+                                <span className='text-gray-400 font-medium'> {job.educational_requirements.map((req, index) => <li key={index}>{req}</li>)}
                                 </span>
                             </h2>
                             <h2 className='text-gray-600 font-bold text-base leading-5 mt-5'>Experiences:
