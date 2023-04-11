@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AppliedDetails from '../AppliedDetails/AppliedDetails';
 
-
 const AppliedJobs = () => {
     // sort:
-    const [showRemote, setShowRemote] = useState(false);
+    const [showRemote, setShowRemote] = useState(null);
 
-
-    // const allJobs = useLoaderData();
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         const loadJobs = async () => {
@@ -42,19 +39,23 @@ const AppliedJobs = () => {
                 <button onClick={handleOnsite} className="bg-gradient-to-r from-indigo-400 to-purple-500 text-white transition hover:text-black font-bold py-4 px-6 rounded">Onsite</button>
             </div>
 
-            {showRemote
-                ? remoteData.map((job) => <AppliedDetails
+            {showRemote === null
+                ? matchedJobs.map((job) => <AppliedDetails
                     key={job._id}
                     job={job}
                 ></AppliedDetails>)
-                : onsiteData.map((job) => <AppliedDetails
-                    key={job._id}
-                    job={job}
-                ></AppliedDetails>)
+                : showRemote
+                    ? remoteData.map((job) => <AppliedDetails
+                        key={job._id}
+                        job={job}
+                    ></AppliedDetails>)
+                    : onsiteData.map((job) => <AppliedDetails
+                        key={job._id}
+                        job={job}
+                    ></AppliedDetails>)
             }
         </div>
     );
 };
-
 
 export default AppliedJobs;
